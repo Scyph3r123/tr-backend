@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project"
+    "displayName": "project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,12 +25,20 @@
       "default": false
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
+      ]
+    },
+    "featured_image": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }

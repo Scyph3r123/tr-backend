@@ -714,6 +714,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -723,6 +724,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     description: Attribute.RichText;
     featured: Attribute.Boolean & Attribute.DefaultTo<false>;
     images: Attribute.Media;
+    featured_image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
