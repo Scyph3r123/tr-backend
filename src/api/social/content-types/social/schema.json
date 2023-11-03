@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "socials",
+  "info": {
+    "singularName": "social",
+    "pluralName": "socials",
+    "displayName": "Social"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "platforms": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "X(Twitter)",
+        "Youtube",
+        "Instagram",
+        "Whatsapp",
+        "Reddit",
+        "Linkedin"
+      ]
+    },
+    "publicAccess": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

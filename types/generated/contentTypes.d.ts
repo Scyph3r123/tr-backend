@@ -743,6 +743,50 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiSocialSocial extends Schema.CollectionType {
+  collectionName: 'socials';
+  info: {
+    singularName: 'social';
+    pluralName: 'socials';
+    displayName: 'Social';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required & Attribute.Unique;
+    platforms: Attribute.Enumeration<
+      [
+        'Facebook',
+        'X(Twitter)',
+        'Youtube',
+        'Instagram',
+        'Whatsapp',
+        'Reddit',
+        'Linkedin'
+      ]
+    >;
+    publicAccess: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -761,6 +805,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::project.project': ApiProjectProject;
+      'api::social.social': ApiSocialSocial;
     }
   }
 }
