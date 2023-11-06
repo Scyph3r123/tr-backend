@@ -683,6 +683,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -690,6 +691,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   attributes: {
     description: Attribute.RichText & Attribute.Required;
     Title: Attribute.String & Attribute.Unique;
+    profile_picture: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -752,10 +754,10 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.RichText;
+    description: Attribute.RichText & Attribute.Required;
     featured: Attribute.Boolean & Attribute.DefaultTo<false>;
     images: Attribute.Media;
-    featured_image: Attribute.Media;
+    featured_image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

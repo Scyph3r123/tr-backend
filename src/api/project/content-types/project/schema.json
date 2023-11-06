@@ -18,11 +18,13 @@
       "unique": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "featured": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": false
     },
     "images": {
       "type": "media",
@@ -34,11 +36,12 @@
       ]
     },
     "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
